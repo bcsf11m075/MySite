@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "LogIn";
+}
+
+@using (Html.BeginForm("LogInConfirm", "Main", FormMethod.Post))
+{
+    <fieldset>
+        <table border="0" cellspacing="25" align="center">
+            <tr>
+                <td colspan="3" align="center"><h1 style="color: red"><i>Log In</i></h1></td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("UserName") </td>
+                <td>
+                    @Html.TextBox("UserName")
+                    @Html.ValidationMessage("UserName")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Password") </td>
+                <td>
+                    @Html.TextBox("Password")
+                    @Html.ValidationMessage("Password")
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Log in" /></td>
+            </tr>
+        </table>
+    </fieldset>
+}
+
+<style>
+    .field-validation-error {
+        font-weight: bold;
+        color: red;
+    }
+
+    .validation-summary-errors {
+        font-weight: bold;
+        color: red;
+    }
+</style>

@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "SignUp";
+}
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+
+    $(document).ready(function () {
+
+        $('#checking').hide();
+
+        $('#b1').click(function () {
+
+            var userName = $('#UserName').val();
+            $('#checking').show();
+            $.getJSON("/Main/CheckUserName?userName=" + userName, function (data) {
+                $('#checking').hide();
+                if (userName == "")
+                {
+                    $('#result').text("Enter user name first");
+                }
+                else if (data == 1) {
+                    $('#result').text("User already exists in database");
+
+                }
+                else {
+                    $('#result').text("User Name is available");
+                }
+            });
+
+        });
+
+    });
+</script>
+
+
+
+@using (Html.BeginForm("SignUpConfirm", "Main", FormMethod.Post))
+{
+    <fieldset>
+        <table border="0" cellspacing="25" align="center">
+            <tr>
+                <td colspan="3" align="center"><h1 style="color: red"><i> Sign Up</i></h1></td>
+                <td colspan="3" align="center"><a style="color:blue" href="/Main/Login"><i> Login </i></a></td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("UserName") </td>
+                <td>
+                    <div id="checking">Checking...</div>
+                    @Html.TextBox("UserName") <input type="button" id="b1" value="Check" />
+                    @Html.ValidationMessage("UserName")
+                    <br />
+                    <div id="result"></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Password") </td>
+                <td>
+                    @Html.TextBox("Password")
+                    @Html.ValidationMessage("Password")
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="Sign up" /></td>
+            </tr>
+        </table>
+    </fieldset>
+}
+
+<style>
+    .field-validation-error {
+        font-weight: bold;
+        color: red;
+    }
+
+    .validation-summary-errors {
+        font-weight: bold;
+        color: red;
+    }
+</style>

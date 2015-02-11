@@ -1,0 +1,181 @@
+﻿
+@using (Html.BeginForm("AddMobileConfirm", "Admin", FormMethod.Post))
+{
+    <fieldset>
+        <table border="0" cellspacing="25" align="center">
+            <tr>
+                <td colspan="3" align="center"><h1 style="color: red"><i>Add Mobile</i></h1></td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Name") </td>
+                <td>
+                    <label for="Name"></label>
+                    @Html.TextBox("Name")
+                    @Html.ValidationMessage("Name")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Brand") </td>
+                <td>
+                    @Html.TextBox("Brand")
+                    @Html.ValidationMessage("Brand")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Operating System") </td>
+                <td>
+                    <label for="OperatingSystem"></label>
+                    @Html.TextBox("OS")
+                    @Html.ValidationMessage("OS")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Processor") </td>
+                <td>
+                    <label for="Processor"></label>
+                    @Html.TextBox("Processor")
+                    @Html.ValidationMessage("Processor")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Color") </td>
+                <td>
+                    <label for="Color"></label>
+                    @Html.TextBox("Color")
+                    @Html.ValidationMessage("Color")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right">@Html.Label("Image Name") </td>
+                <td>
+                    <label for="ImageName"></label>
+                    @Html.TextBox("Image")
+                    @Html.ValidationMessage("Image")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("RAM") </td>
+                <td>
+                    <label for="RAM"></label>
+                    @Html.TextBox("RAM")
+                    @Html.ValidationMessage("RAM")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Internal Memory") </td>
+                <td>
+                    <label for="InternalMemory"></label>
+                    @Html.TextBox("InternalMemory")
+                    @Html.ValidationMessage("InternalMemory")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Camera") </td>
+                <td>
+                    <label for="Camera"></label>
+                    @Html.TextBox("Camera")
+                    @Html.ValidationMessage("Camera")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Price") </td>
+                <td>
+                    <label for="Price"></label>
+                    @Html.TextBox("Price")
+                    @Html.ValidationMessage("Price")
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"> @Html.Label("Screen Size") </td>
+                <td>
+                    <label for="ScreenSize"></label>
+                    @Html.TextBox("ScreenSize")
+                    @Html.ValidationMessage("ScreenSize")
+                </td>
+            </tr>
+        </table>
+
+        <table border="0" cellspacing="25" align="center">
+            <tr>
+                <td align="right">Mp3</td>
+                <td><label for="Mp3"></label><input type="radio" name="IsMp3" value="YES" /> YES</td>
+                <td><label for="Mp3"></label><input type="radio" name="IsMp3" id="Mp3" value="NO" checked /> NO</td>
+            </tr>
+
+            <tr>
+                <td align="right">Mp4</td>
+                <td><label for="Mp4"></label><input type="radio" name="IsMp4" value="YES" /> YES</td>
+                <td><label for="Mp4"></label><input type="radio" name="IsMp4" value="NO" checked /> NO</td>
+            </tr>
+
+            <tr>
+                <td align="right">Bluetooth</td>
+                <td><label for="Bluetooth"></label><input type="radio" name="IsBluetooth" value="YES" /> YES</td>
+                <td><label for="Bluetooth"></label><input type="radio" name="IsBluetooth" value="NO" checked /> NO</td>
+            </tr>
+
+            <tr>
+                <td align="right">Wifi</td>
+                <td><label for="Wifi"></label><input type="radio" name="IsWifi" value="YES" /> YES</td>
+                <td><label for="Wifi"></label><input type="radio" name="IsWifi" value="NO" checked /> NO</td>
+            </tr>
+
+            <tr>
+                <td align="right">Usb Port</td>
+                <td><label for="UsbPort"></label><input type="radio" name="IsUsbPort" value="YES" /> YES</td>
+                <td><label for="UsbPort"></label><input type="radio" name="IsUsbPort" value="NO" checked /> NO</td>
+            </tr>
+
+            <tr>
+                <td align="right">Dual Sim</td>
+                <td><label for="DualSim"></label><input type="radio" name="IsDualSim" value="YES" /> YES</td>
+                <td><label for="DualSim"></label><input type="radio" name="IsDualSim" value="NO" checked /> NO</td>
+            </tr>
+
+            <tr>
+                <td align="right">LED Flash</td>
+                <td><label for="LEDFlash"></label><input type="radio" name="IsLedflash" value="YES" /> YES</td>
+                <td><label for="LEDFlash"></label><input type="radio" name="IsLedflash" value="NO" checked /> NO</td>
+            </tr>
+
+            <tr>
+                <td align="right">SD card Slot</td>
+                <td><label for="SDcardSlot"></label><input type="radio" name="IsSdCardSlot" value="YES" /> YES</td>
+                <td><label for="SDcardSlot"></label><input type="radio" name="IsSdCardSlot" value="NO" checked /> NO</td>
+            </tr>
+
+            <tr>
+                <td align="right">Radio</td>
+                <td><label for="Radio"></label><input type="radio" name="IsRadio" value="YES" /> YES</td>
+                <td><label for="Radio"></label><input type="radio" name="IsRadio" value="NO" checked /> NO</td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="submitButton" value="Add"/></td>
+            </tr>
+        </table>
+    </fieldset>
+}
+
+<style>
+    .field-validation-error {
+        font-weight: bold;
+        color: red;
+    }
+
+    .validation-summary-errors {
+        font-weight: bold;
+        color: red;
+    }
+</style>

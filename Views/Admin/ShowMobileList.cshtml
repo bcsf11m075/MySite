@@ -1,0 +1,98 @@
+﻿@model List<Project.Models.Mobile>
+
+@foreach (var mobile in Model)
+{
+    <table>
+        <tr>
+            <td class="mob" id="pic" rowspan="9" colspan="4"><img style="border:0px" src="~/Content/images/@mobile.Image" width="140" height="200" /></td>
+            <th class="mob" colspan="10" style="text-align:center; color:#0000CC;"> @mobile.Name </th>
+            <th class="mob" colspan="3" style="text-align:center; color:red"> @mobile.Price/- </th>
+        </tr>
+
+        <tr class="mob">
+            <th class="mob" colspan="2" style="color:#990066"> Brand:</th>
+            <td class="mob" colspan="11"> @mobile.Brand </td>
+        </tr>
+
+        <tr class="mob">
+            <th class="mob" colspan="2" style="color:#990066">Operating System:</th>
+            <td class="mob" colspan="11"> @mobile.OS </td>
+        </tr>
+
+        <tr class="mob">
+            <th class="mob" colspan="2" style="color:#990066">Processor:</th>
+            <td class="mob" colspan="11"> @mobile.Processor </td>
+        </tr>
+
+        <tr class="mob">
+            <th class="mob" colspan="2" style="color:#990066">Colors:</th>
+            <td class="mob" colspan="11"> @mobile.Color </td>
+        </tr>
+
+        <tr class="mob">
+            <th class="mob" colspan="2" style="color:#990066">RAM:</th>
+            <td class="mob" colspan="13"> @mobile.RAM </td>
+        </tr>
+
+        <tr class="mob">
+            <th class="mob" colspan="2" style="color:#990066">Internal Memory:</th>
+            <td class="mob" colspan="13"> @mobile.InternalMemory </td>
+        </tr>
+
+        <tr class="mob">
+            <th class="mob" colspan="2" style="color:#990066">Camera:</th>
+            <td class="mob" colspan="13"> @mobile.Camera MP </td>
+        </tr>
+
+        <tr class="mob">
+            <th class="mob" colspan="2" style="color:#990066">Screen Size:</th>
+            <td class="mob" colspan="13"> @mobile.ScreenSize inch </td>
+
+        </tr>
+
+        <tr class="mob">
+            <th class="mob" rowspan="2" colspan="3" style="color:#990066">Other Features:</th>
+            <td class="mob" style="text-align:center; color:#990066"> MP3 </td>
+            <td class="mob" style="text-align:center; color:#990066"> MP4 </td>
+            <td class="mob" colspan="2" style="text-align:center; color:#990066"> Bluetooth </td>
+            <td class="mob" style="text-align:center; color:#990066"> Wifi </td>
+            <td class="mob" colspan="2" style="text-align:center; color:#990066"> USB port </td>
+            <td class="mob" colspan="2" style="text-align:center; color:#990066"> Dual Sim </td>
+            <td class="mob" colspan="2" style="text-align:center; color:#990066"> LED Flash </td>
+            <td class="mob" colspan="2" style="text-align:center; color:#990066"> SDCard Slot </td>
+            <td class="mob" style="text-align:center; color:#990066"> Radio </td>
+        </tr>
+
+        <tr class="mob">
+            <td class="mob" style="text-align:center"> @mobile.IsMp3 </td>
+            <td class="mob" style="text-align:center"> @mobile.isMp4 </td>
+            <td class="mob" colspan="2" style="text-align:center"> @mobile.IsBluetooth </td>
+            <td class="mob" style="text-align:center"> @mobile.IsWifi </td>
+            <td class="mob" colspan="2" style="text-align:center"> @mobile.IsUsbPort </td>
+            <td class="mob" colspan="2" style="text-align:center"> @mobile.IsDualSim </td>
+            <td class="mob" colspan="2" style="text-align:center"> @mobile.IsLedflash </td>
+            <td class="mob" colspan="2" style="text-align:center"> @mobile.IsSdCardSlot </td>
+            <td class="mob" style="text-align:center"> @mobile.IsRadio </td>
+        </tr>
+        <tr class="mob">
+            <td class="mob" colspan="1" style="text-align:center; font-size:15px">
+                @Html.ActionLink("Update", "UpdateMobile", new { @mobile.Id })
+            </td>
+            <td class="mob" colspan="2" style="text-align:center; font-size:15px"> @Html.ActionLink("Delete", "DeleteMobile", new { @mobile.Id })</td>
+        </tr>
+    </table>
+    <br />
+}
+
+<style type="text/css">
+    .mob {
+        text-align: left;
+        border-collapse: collapse;
+        border-style: solid;
+        border-color: #000066;
+        border-width: 1px;
+        padding: 4px;
+        font-size: 12px;
+        background-color: #CCCCFF;
+    }
+</style>

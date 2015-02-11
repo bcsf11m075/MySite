@@ -1,0 +1,129 @@
+﻿
+<html>
+<head>
+    <title> Pak Mobiles </title>
+
+    <script type="text/javascript">
+
+        function validateName() {
+            if (document.searchForm.name.value == "") {
+                alert("Please Enter Name");
+                document.searchForm.name.focus();
+                return false;
+            }
+        }
+    </script>
+
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header-wrapper">
+            <div id="header">
+                <div id="logo">
+                    <h1> <a href="#">PakMobiles<i id="ext">.com.pk </i> </a></h1>
+                </div>
+            </div>
+        </div>
+        <!-- end #header -->
+        <div id="menu">
+            <ul>
+                <li><a href="/Client/Index">Homepage</a></li>
+                <li><a href="/Client/ShowFavouriteMobiles">Favourite Mobiles </a></li>
+                <li><a href="/Client/AboutUs">About</a></li>
+                <li><a href="/Client/ContactUs">Contact</a></li>
+            </ul>
+        </div>
+        <!-- end #menu -->
+        <div id="page">
+            <div id="page-bgtop">
+                <div id="page-bgbtm">
+                    <div id="content">
+                        @RenderBody() 
+                    </div>
+                    <div id="sidebar">
+                        <ul>
+                            <li> <a href="/Client/Logout" style="color:blue">Log out</a> </li>
+                            <li>
+                                <h2> Search by Keyword </h2>
+                                <form name="searchForm" id="searchForm" method="post" onsubmit="return validateName()" action="/Client/SearchMobile">
+                                    <input type="text" name="name" id="name" />
+                                    <input type="submit" value="Search" id="b1" />
+                                </form>
+                            </li>
+                            <li>
+                                <h2>Search by Brand</h2>
+                                <ul>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=Nokia"> Nokia </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=Samsung">Samsung </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=Sony"> Sony </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand?brand=HTC">HTC Mobile </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=Apple"> Apple iphone</a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=BlackBerry"> BlackBerry </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=Voice">  VOICE Mobile </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=Huawei">  Huawei Mobile </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=Qmobile">  QMobile </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=SonyEricsson">  SonyEricsson </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=LG">  LG Mobile </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=Motorola">  Motorola Mobile </a></li>
+                                    <li><a href="/Client/ShowMobileListByBrand/?brand=GFive"> GFive </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2> Search by Price </h2>
+                                <ul>
+                                    <li><a href="/Client/ShowMobileListByPrice/?minPrice=45001&maxPrice=1000000">Price > 45000 </a></li>
+                                    <li><a href="/Client/ShowMobileListByPrice/?minPrice=35001&maxPrice=45000"> 35,001 - 45,000 </a></li>
+                                    <li><a href="/Client/ShowMobileListByPrice/?minPrice=25001&maxPrice=35000">  25,001 - 35,000 </a></li>
+                                    <li><a href="/Client/ShowMobileListByPrice/?minPrice=15001&maxPrice=25000"> 15,001 - 25,000 </a></li>
+                                    <li><a href="/Client/ShowMobileListByPrice/?minPrice=10001&maxPrice=15000">10,001 - 15,000 </a></li>
+                                    <li><a href="/Client/ShowMobileListByPrice/?&minPrice=5001&maxPrice=10000"> 5,000 - 10,000 </a></li>
+                                    <li><a href="/Client/ShowMobileListByPrice/?minPrice=0&maxPrice=5000"> Price < 5,000 </a></li>
+                                    <li><a href="/Client/ShowAllMobiles">  All Mobile Prices </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2>Search by OS</h2>
+                                <ul>
+                                    <li><a href="/Client/ShowMobileListByOS/?os=Android"> Android Phones </a></li>
+                                    <li><a href="/Client/ShowMobileListByOS/?os=IOS"> IOS Phones </a></li>
+                                    <li><a href="/Client/ShowMobileListByOS/?os=Windows"> Windows Phones </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2>Search by Camera </h2>
+                                <ul>
+                                    <li><a href="/Client/ShowMobileListByCamera/?camera=13">  13 MP Mobiles </a></li>
+                                    <li><a href="/Client/ShowMobileListByCamera/?camera=8">  8 MP Mobiles </a></li>
+                                    <li><a href="/Client/ShowMobileListByCamera/?camera=5">  5 MP Mobiles </a></li>
+                                    <li><a href="/Client/ShowMobileListByCamera/?camera=3">  3 MP Mobiles </a></li>
+                                    <li><a href="/Client/ShowMobileListByCamera/?camera=2">  2 MP Mobiles </a></li>
+                                    <li><a href="/Client/ShowMobileListByCamera/?camera=1">  1 MP Mobiles </a></li>
+                                    <li><a href="/Client/ShowMobileListByCamera/?camera=0">  without camera  </a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h2>Search by Screen </h2>
+                                <ul>
+                                    <li><a href="/Client/ShowMobileListByScreen/?minScr=0.0&maxScr=2.9">   Less Than 3 Inches </a></li>
+                                    <li><a href="/Client/ShowMobileListByScreen/?minScr=3.0&maxScr=4.0">   3.0 inch - 4.0 inch </a></li>
+                                    <li><a href="/Client/ShowMobileListByScreen/?minScr=4.1&maxScr=4.9">   4.1 inch - 4.9 inch </a></li>
+                                    <li><a href="/Client/ShowMobileListByScreen/?minScr=5.0&maxScr=6.9">   5.0 inch - 6.9 inch </a></li>
+                                    <li><a href="/Client/ShowMobileListByScreen/?minScr=7.0&maxScr=8.9">   7.0 inch - 8.9 inch </a></li>
+                                    <li><a href="/Client/ShowMobileListByScreen/?minScr=9.0&maxScr=20.0">  greater than 8.9 inch </a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end #sidebar -->
+                    <div style="clear: both;">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <!-- end #page -->
+    </div>
+    <div id="footer">
+    </div>
+    <!-- end #footer -->
+</body>
+</html>
